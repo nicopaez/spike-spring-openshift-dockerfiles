@@ -6,7 +6,7 @@ RUN mkdir -p /var/www/springping
 
 WORKDIR /var/www/springping
 
-RUN wget http://159.89.179.254:8081/artifactory/libs-release/com/nicopaez/springping/nicopaez-springping/2.0.2/nicopaez-springping-2.0.2.jar -O springping.jar
+RUN wget http://159.89.179.254:8081/artifactory/libs-release/com/nicopaez/springping/nicopaez-springping/$VERSION/nicopaez-springping-$VERSION.jar -O springping.jar
 
 EXPOSE 8080
 
