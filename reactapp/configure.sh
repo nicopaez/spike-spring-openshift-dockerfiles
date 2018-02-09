@@ -12,6 +12,9 @@ http {
         location / {
 	    	try_files \$uri /index.html;
         }
+        location ~ \.css {
+           add_header  Content-Type    text/css;
+        }
         location /config {
             proxy_pass http://127.0.0.1:8081/spikereact/development;
             proxy_set_header Host \$host;
