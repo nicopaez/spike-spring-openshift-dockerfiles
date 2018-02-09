@@ -5,7 +5,7 @@ echo "Armando el archivo de configuración de ngnix"
 echo "
 http {
     server {
-        listen 80;
+        listen 8080;
         server_name _;
         index index.html;
         root /data/www;

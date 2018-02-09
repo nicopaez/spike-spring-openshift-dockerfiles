@@ -1,4 +1,4 @@
-FROM nginx
+FROM nicopaez/openshift-nginx:20180209
 
 RUN mkdir /data
 
