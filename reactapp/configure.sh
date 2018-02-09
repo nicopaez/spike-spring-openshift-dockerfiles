@@ -3,12 +3,9 @@
 echo "Armando el archivo de configuración de ngnix"
 
 echo "
-
-error_log  /var/log/nginx/error.log warn;
 pid         /tmp/nginx.pid;
 
 http {
-    access_log  /var/log/nginx/access.log  main;
     server {
         listen 8080;
         server_name _;
