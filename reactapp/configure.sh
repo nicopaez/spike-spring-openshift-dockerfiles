@@ -3,7 +3,12 @@
 echo "Armando el archivo de configuración de ngnix"
 
 echo "
+
+error_log  /var/log/nginx/error.log warn;
+pid         /tmp/nginx.pid;
+
 http {
+    access_log  /var/log/nginx/access.log  main;
     server {
         listen 8080;
         server_name _;
@@ -11,9 +16,6 @@ http {
         root /data/www;
         location / {
 	    	try_files \$uri /index.html;
-        }
-        location ~ \.css {
-           add_header  Content-Type    text/css;
         }
         location /config {
             proxy_pass http://127.0.0.1:8081/spikereact/development;
@@ -23,6 +25,7 @@ http {
             proxy_set_header content-type "application/json";
         }
     }
+    include /etc/nginx/conf.d/*.conf;
 }
 events {
     worker_connections  1024;
